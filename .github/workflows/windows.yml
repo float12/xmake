@@ -49,6 +49,8 @@ jobs:
       - name: Prepare
         run: |
           xmake show
+          curl --version
+          wget --version
           [Net.ServicePointManager]::SecurityProtocol = "tls12, tls11, tls"
           Invoke-WebRequest "https://github.com/xmake-mirror/nsis/releases/download/v30b3/nsis-3.04.zip" -UseBasicParsing -OutFile ./nsis.zip
           Invoke-WebRequest "https://github.com/xmake-mirror/nsis/releases/download/v30b3/nsis-3.04-strlen_8192.zip" -UseBasicParsing -OutFile ./nsis-longstr.zip
